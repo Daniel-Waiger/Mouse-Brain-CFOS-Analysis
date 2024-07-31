@@ -34,8 +34,9 @@ The script performs the following steps:
 ## Installation
 
 1. Install ImageJ/Fiji from the [official website](https://imagej.net/software/fiji/downloads).
-2. Install the Bio-Formats plugin from the [official website](https://www.openmicroscopy.org/bio-formats/downloads/).
-3. Install the StarDist plugin from the [official GitHub repository](https://github.com/stardist/stardist).
+2. Install the Bio-Formats plugin.
+3. Install the StarDist plugin.
+   - Both plugins can be installed via the `Help` Menu --> `Update...` --> `Manage Update Sites`
 
 ## Usage
 
