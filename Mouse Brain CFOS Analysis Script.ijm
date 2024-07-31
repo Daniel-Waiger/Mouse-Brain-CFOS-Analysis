@@ -4,7 +4,7 @@
 // daniel.waiger@mail.huji.ac.il
 // image.sc forum: Daniel_Waiger
 
-// For: [Full Name] of [Lab] in [institute].
+// For: [Liya Niv] of [Oren Forkosh Lab] in [Biochmeistry and Food Science].
 // doi:
 
 // Start timer
@@ -12,6 +12,8 @@ startTime = getTime();
 
 // Close all open images to start fresh
 close("*");
+run("Clear Results");
+print("\\Clear");
 
 // Collect user-defined parameters
 Dialog.create("Image Analysis Parameters");
@@ -120,10 +122,6 @@ run("Tile");
 print("StarDist segmentation completed.");
 
 // Save results with relevant details
-print("Saving results...");
-saveAs("Results", savePath + originalFileName + "_Results.csv");
-print("Results saved.");
-
 selectWindow(originalFileName + "_SUM_ROI_" + channel1Name + ".tif");
 saveAs("Tiff", savePath + originalFileName + "_SUM_ROI_" + channel1Name + ".tif");
 selectWindow(originalFileName + "_SUM_ROI_" + channel2Name + ".tif");
@@ -132,10 +130,13 @@ roiManager("Deselect");
 roiManager("Measure");
 saveAs("Tiff", savePath + originalFileName + "_SUM_ROI_" + channel2Name + ".tif");
 roiManager("Save", savePath + originalFileName + "_RoiSet.zip");
+print("Saving results...");
+//selectWindow("Results");
+saveAs("Results", savePath + originalFileName + "_Results.csv");
+print("Results saved.");
 print("Images and ROI sets saved.");
 
-// Clear the Results table
-run("Clear Results");
+
 
 // Print total run time
 endTime = getTime();
