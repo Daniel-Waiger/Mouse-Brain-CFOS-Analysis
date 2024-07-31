@@ -13,6 +13,25 @@ Daniel Waiger
 - **DOI**: 
 
 ## Description
+## Description
+
+<p align="left">
+    <img src="https://github.com/user-attachments/assets/0591d04a-8d5f-449a-9523-9e149ee32090" width="33%" alt="Analysis Parameters">
+    <img src="https://github.com/user-attachments/assets/77a50562-98d3-4878-ae43-6f7c5eb16881" width="33%" alt="ROI Selection Dialog">
+</p>
+
+<p align="left">
+    <img src="https://github.com/user-attachments/assets/64cdb5e3-9471-4d05-b373-e375a1afb8bc" width="37%" alt="Wait For User Dialog">
+    <img src="https://github.com/user-attachments/assets/49b6e927-70d4-44a5-bf1e-cbc1611c621b" width="33%" alt="ROI Validation Dialog"> 
+   
+</p>
+
+<p align="left">
+    <img src="https://github.com/user-attachments/assets/323753af-a9bf-43c2-9c5a-2f14726e34a3" width="33%" alt="Image and ROI Overlay"> 
+    <img src="https://github.com/user-attachments/assets/e14cb19e-e308-41ad-864e-db472dc6ce2c" width="28%" alt="Analysis Progress Log">
+</p>
+
+
 
 The script performs the following steps:
 1. Opens the selected image file.
