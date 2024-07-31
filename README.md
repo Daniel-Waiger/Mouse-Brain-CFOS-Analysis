@@ -1,7 +1,8 @@
 # Mouse Brain CFOS Analysis
 
 This script is designed to analyze mouse brain sections for CFOS based on Stardist DAPI nuclei segmentation.
-It was created by Daniel Waiger from the Bio-imaging & Flow Cytometry Core Facility at the Robert H. Smith Faculty of Agriculture, Food and Environment of the Hebrew University of Jerusalem.
+
+**DOI**: 
 
 ## Author
 
@@ -10,7 +11,8 @@ Daniel Waiger
 - **Image.sc forum**: Daniel_Waiger
 
 - **Institution**: CSI – Center for Scientific Imaging at The Robert H. Smith Faculty of Agriculture, Food and Environment of the Hebrew University of Jerusalem
-- **DOI**: 
+- **Website**: [Faculty of Agriculture CSI Microscopy](https://github.com/Faculty-of-Agriculture-CSI-Microscopy)
+
 
 ## Description
 
