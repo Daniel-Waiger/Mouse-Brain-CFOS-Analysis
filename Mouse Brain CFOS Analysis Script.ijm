@@ -16,7 +16,7 @@ run("Clear Results");
 print("\\Clear");
 
 // Collect user-defined parameters
-Dialog.create("Image Analysis Parameters");
+Dialog.create("Analysis Parameters");
 Dialog.addFile("Select the image file to open:", "");
 Dialog.addDirectory("Choose a directory to save results:", "");
 Dialog.addString("Enter name for Channel 1 (e.g., DAPI):", "Channel 1");
