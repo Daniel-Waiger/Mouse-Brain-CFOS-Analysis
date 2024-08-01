@@ -57,8 +57,9 @@ The script performs the following steps:
 
 1. Install ImageJ/Fiji from the [official website](https://imagej.net/software/fiji/downloads).
 2. Install the Bio-Formats plugin.
+   - To load `.ims` files and select the `Resolution Level` (Defined as `Series` in the script).
 3. Install the StarDist plugin.
-   - Both plugins can be installed via the `Help` Menu --> `Update...` --> `Manage Update Sites`
+### Both plugins can be installed via the `Help` Menu --> `Update...` --> `Manage Update Sites`
 
 ## Usage
 
