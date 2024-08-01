@@ -74,7 +74,7 @@ graph TD
     A[Start Script] --> B[Close all open images]
     B --> C[Collect user-defined parameters]
     C --> D{Validate inputs}
-    D -->|Invalid| E[Exit: No image file or save directory selected]
+    D -->|Invalid| E[Exit: No image file (`.ims`) or output directory selected]
     D -->|Valid| F[Open image and set measurements]
     F --> G[Perform sum projection]
     G --> H[Split channels]
