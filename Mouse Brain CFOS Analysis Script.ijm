@@ -4,7 +4,7 @@
 // daniel.waiger@mail.huji.ac.il
 // image.sc forum: Daniel_Waiger
 
-// For: [Liya Niv] of [Oren Forkosh Lab] in [Biochmeistry and Food Science].
+// For: [Full Name] of [Lab] in [institute].
 // doi:
 
 // Start timer
@@ -14,13 +14,14 @@ startTime = getTime();
 close("*");
 run("Clear Results");
 print("\\Clear");
+roiManager("Reset");
 
 // Collect user-defined parameters
-Dialog.create("Analysis Parameters");
+Dialog.create("Image Analysis Parameters");
 Dialog.addFile("Select the image file to open:", "");
 Dialog.addDirectory("Choose a directory to save results:", "");
-Dialog.addString("Enter name for Channel 1 (e.g., DAPI):", "Channel 1");
-Dialog.addString("Enter name for Channel 2 (e.g., CFOS):", "Channel 2");
+Dialog.addString("Enter name for Channel 1 (e.g., DAPI):", "Ch-1");
+Dialog.addString("Enter name for Channel 2 (e.g., CFOS):", "Ch-2");
 Dialog.show();
 
 // Get the user inputs
@@ -85,8 +86,8 @@ roiSet = getBoolean("Select an ROI?\nNO means that the entire image will be proc
 if (roiSet) {
     done = false;
     while (!done) {
-        // Activate rectangle tool and wait for user to make a selection
-        setTool("rectangle");
+        // Activate polygon tool and wait for user to make a selection
+        setTool("polygon");
         waitForUser("Please select an ROI and click OK.");
         
         // Ask user to confirm the selection
@@ -95,7 +96,13 @@ if (roiSet) {
             done = true;
         }
     }
-    print("ROI selected by user.");
+    // Add ROI to the manager and show all
+    roiManager("Add");
+    if (roiSet) {
+    roiManager("Add");
+    roiManager("Select", roiManager("count") - 1);
+    roiManager("Save", savePath + "selected_roi.zip");
+    print("ROI selected by user, and saved to" + savePath);
 } else {
     print("Processing entire image.");
 }
@@ -104,16 +111,25 @@ if (roiSet) {
 print("Processing Channel 1...");
 selectWindow(channel1Name);
 run("Duplicate...", "title=" + originalFileName + "_SUM_ROI_" + channel1Name + ".tif");
+run("Clear Outside");
 print("Channel 1 processed.");
 
 // Process Channel 2
 print("Processing Channel 2...");
 selectWindow(channel2Name);
-run("Restore Selection");
+
+// Restore the ROI from the manager
+roiManager("Select", roiManager("count") - 1); // Select last added ROI
 run("Duplicate...", "title=" + originalFileName + "_SUM_ROI_" + channel2Name + ".tif");
+run("Clear Outside");
 run("Enhance Contrast", "saturated=0.35");
 run("Tile");
 print("Channel 2 processed.");
+
+// Reset ROI Manager to prevent interference
+roiManager("Show None");
+roiManager("Reset");
+
 
 // StarDist segmentation on Channel 1
 print("Running StarDist segmentation on Channel 1...");
@@ -125,18 +141,16 @@ print("StarDist segmentation completed.");
 selectWindow(originalFileName + "_SUM_ROI_" + channel1Name + ".tif");
 saveAs("Tiff", savePath + originalFileName + "_SUM_ROI_" + channel1Name + ".tif");
 selectWindow(originalFileName + "_SUM_ROI_" + channel2Name + ".tif");
-roiManager("show all");
+roiManager("Show All");
 roiManager("Deselect");
 roiManager("Measure");
 saveAs("Tiff", savePath + originalFileName + "_SUM_ROI_" + channel2Name + ".tif");
 roiManager("Save", savePath + originalFileName + "_RoiSet.zip");
 print("Saving results...");
-//selectWindow("Results");
+
 saveAs("Results", savePath + originalFileName + "_Results.csv");
 print("Results saved.");
 print("Images and ROI sets saved.");
-
-
 
 // Print total run time
 endTime = getTime();
