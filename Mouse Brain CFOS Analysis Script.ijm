@@ -102,7 +102,7 @@ if (roiSet) {
     roiManager("Add");
     roiManager("Select", roiManager("count") - 1);
     roiManager("Save", savePath + "selected_roi.zip");
-    print("ROI selected by user, and saved to" + savePath);
+    print("ROI selected by user, and saved to: " + savePath);
 } else {
     print("Processing entire image.");
 }
