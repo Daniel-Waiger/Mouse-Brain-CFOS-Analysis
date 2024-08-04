@@ -89,9 +89,8 @@ graph TD
     J -->|Yes| K[Prompt user to select ROI]
     K --> L[Confirm and save ROI selection]
     L -->|Confirmed| M[Process selected ROI]
-    J -->|No| N[Process entire image with the
-    risk of crashing Fiji]
-    when loading big images]
+    J -->|No| N[Process entire image with the risk of crashing
+ Fiji when loading big images]
     M --> O[Process Channel 1]
     N --> O[Process Channel 1 + 2]
     O --> P[Run StarDist segmentation on Channel 1]
