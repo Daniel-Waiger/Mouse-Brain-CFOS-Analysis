@@ -28,10 +28,16 @@ Daniel Waiger
    
 </p>
 
+
 <p align="left">
-    <img src="https://github.com/user-attachments/assets/323753af-a9bf-43c2-9c5a-2f14726e34a3" width="33%" alt="Image and ROI Overlay"> 
+    <img src="https://github.com/user-attachments/assets/5b2c7227-33f3-4598-9b49-c0184dc07e4e" width="35%" alt="Image and ROI Overlay">
+    <img src="https://github.com/user-attachments/assets/6c59c0cd-ab32-44c3-8451-ddd5af2f7ba3" width="35%" alt="Image and ROI Overlay">
+</p>
+
+<p align="left">
     <img src="https://github.com/user-attachments/assets/e14cb19e-e308-41ad-864e-db472dc6ce2c" width="28%" alt="Analysis Progress Log">
 </p>
+
 
 
 ### Script steps
