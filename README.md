@@ -87,15 +87,15 @@ graph TD
     H --> I[Apply LUTs to split images]
     I --> J{Select ROI?}
     J -->|Yes| K[Prompt user to select ROI]
-    K --> L[Confirm ROI selection]
+    K --> L[Confirm and save ROI selection]
     L -->|Confirmed| M[Process selected ROI]
     J -->|No| N[Process entire image with the
     risk of crashing Fiji
     when loading big images]
     M --> O[Process Channel 1]
-    N --> O[Segment Channel 1]
-    O --> P[Measure Channel 2]
-    P --> Q[Run StarDist segmentation on Channel 1]
+    N --> O[Process Channel 1 + 2]
+    O --> P[Run StarDist segmentation on Channel 1]
+    P --> Q[Measure Channel 2 with Stardist Labels]
     Q --> R[Save results and ROI sets]
     R --> S[Clear Results table]
     S --> T[Print total run time]
