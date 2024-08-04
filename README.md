@@ -93,8 +93,8 @@ graph TD
     risk of crashing Fiji
     when loading big images]
     M --> O[Process Channel 1]
-    N --> O[Process Channel 1]
-    O --> P[Process Channel 2]
+    N --> O[Segment Channel 1]
+    O --> P[Measure Channel 2]
     P --> Q[Run StarDist segmentation on Channel 1]
     Q --> R[Save results and ROI sets]
     R --> S[Clear Results table]
